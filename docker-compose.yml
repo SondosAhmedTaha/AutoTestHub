@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  autotesthub:
+    build: .
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017
+    volumes:
+      - ./reports:/app/reports
+    command: python src/runner.py
+
+  mongodb:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
