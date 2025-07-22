@@ -113,3 +113,7 @@ pip install -r requirements.txt
 👩‍💻 Author
 Sondos Taha
 GitHub: @SondosAhmedTaha
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
