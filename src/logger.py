@@ -1,7 +1,6 @@
 from rich.console import Console
 from rich.theme import Theme
 
-# Define color theme
 custom_theme = Theme({
     "info": "cyan",
     "success": "green",
@@ -10,8 +9,9 @@ custom_theme = Theme({
     "title": "bold magenta",
 })
 
-# Create console with theme
-console = Console(theme=custom_theme)
+# Force color even in Docker
+console = Console(theme=custom_theme, force_terminal=True)
+
 
 # Logging functions
 def log_info(message):

@@ -8,8 +8,10 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
 from src.logger import log_info, log_success, log_error, log_title
+from src.db_handler import save_result   # ✅ Add this line
+
 def run_tests():
-    os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    os.chdir(PROJECT_ROOT)
     
     now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     report_path = f"reports/report_{now}.html"
@@ -23,11 +25,17 @@ def run_tests():
     cmd = [
         "pytest",
         "tests/",
+        "--color=yes",
         f"--html={report_path}",
         "--self-contained-html"
     ]
 
     result = subprocess.run(cmd)
+
+    # ✅ Save result to MongoDB
+    status = "PASS" if result.returncode == 0 else "FAIL"
+    save_result("test_suite", status, 0.0)  # 0.0 = placeholder duration
+
     if result.returncode == 0:
         log_success("All tests passed.")
     else:
