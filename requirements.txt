@@ -2,3 +2,4 @@ pytest
 pytest-html
 pymongo
 rich
+pymongo
