@@ -18,15 +18,17 @@ It provides a lightweight yet powerful structure for writing, running, and repor
 
 ## 🧱 Project Structure
 
+```text
 AutoTestHub/
-├── src/ # Core runner and logic
-│ └── runner.py
-├── tests/ # Pytest test cases
-│ └── test_sample.py
-├── reports/ # HTML test reports
-├── Dockerfile # Docker container setup
-├── requirements.txt # Python dependencies
+├── src/                # Core runner and logic
+│   └── runner.py
+├── tests/              # Pytest test cases
+│   └── test_sample.py
+├── reports/            # HTML test reports
+├── Dockerfile          # Docker container setup
+├── requirements.txt    # Python dependencies
 └── README.md
+```
 
 yaml
 Copy
