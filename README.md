@@ -43,45 +43,40 @@ Edit
 ```bash
 git clone https://github.com/SondosAhmedTaha/AutoTestHub.git
 cd AutoTestHub
+```
 2. Create and activate a virtual environment
-bash
-Copy
-Edit
+```bash
+
 python3 -m venv .venv
 source .venv/bin/activate
-3. Install dependencies
-bash
-Copy
-Edit
+```
+4. Install dependencies
+```bash
 pip install -r requirements.txt
-4. Run the test suite
-bash
-Copy
-Edit
-pytest tests/
-5. Generate an HTML report via runner
-bash
-Copy
-Edit
+```
+5. Run the test suite
+```bash
+pytest tests
+```
+6. Generate an HTML report via runner
+```bash
 python src/runner.py
+```
 Reports will be saved in the reports/ folder with a timestamped name.
 
 🐳 Running with Docker
 🔨 Build the image
-bash
-Copy
-Edit
+```bash
 docker build -t autotesthub .
+```
 ▶️ Run tests in the container
-bash
-Copy
-Edit
+```bash
 docker run --rm autotesthub
+```
 💾 (Optional) Save reports to your local machine
-bash
-Copy
-Edit
+```bash
 docker run --rm -v "$(pwd)/reports:/app/reports" autotesthub
+```
 This mounts your local reports/ folder so HTML reports generated inside the container are saved on your machine.
 
 📦 Dependencies
@@ -97,10 +92,9 @@ Docker (for containerized testing)
 
 Install with:
 
-bash
-Copy
-Edit
+```bash
 pip install -r requirements.txt
+```
 🛣️ Roadmap
  MongoDB integration for test results
 
