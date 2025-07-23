@@ -39,72 +39,79 @@ AutoTestHub/
 
 ## ⚙️ Usage Options
 
+You can run AutoTestHub in two ways: locally or using Docker.
+
+---
+
 ### ✅ Option 1: Run Locally (No Docker)
 
-1. Clone the repository:
- ```bash
- git clone https://github.com/SondosAhmedTaha/AutoTestHub.git
- cd AutoTestHub
+#### 1️⃣ Clone the repository:
+```bash
+git clone https://github.com/SondosAhmedTaha/AutoTestHub.git
+cd AutoTestHub
 ```
-Create a virtual environment:
 
+#### 2️⃣ Add Your Code & Tests:
+- Place your source code inside the `code/` directory (e.g., `main.cpp`).
+- Place your input test files inside the `input/` directory (e.g., `input1.in`, `input2.in`, ...).
+- Place your expected output files inside the `expected/` directory (e.g., `expected1.out`, `expected2.out`, ...).
+
+> ⚠️ File names must match: `input1.in` → `expected1.out`, `input2.in` → `expected2.out`, etc.
+
+#### 3️⃣ Set up a virtual environment:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
-Install dependencies: 
 
+#### 4️⃣ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-Run tests using the CLI script:
+
+#### 5️⃣ Run tests:
 ```bash
 ./scripts/run_tests.sh
 ```
+
 ✅ This will:
+- Compile your `main.cpp` (or other language file)
+- Run your program on each input file
+- Compare output with expected results
+- Save an HTML and JSON report inside the `reports/` directory
 
-Compile your main.cpp (or other language file)
-
-Run tests using files in input/ and expected/
-
-Compare outputs
-
-Generate an HTML report and JSON report inside the reports/ directory
+---
 
 ### 🐳 Option 2: Run with Docker (Fully Isolated)
-Requires Docker installed.
 
-Build and run with:
+> Requires [Docker](https://docs.docker.com/get-docker/) installed.
 
+#### 1️⃣ Run tests inside Docker:
 ```bash
 ./scripts/docker_run.sh
 ```
-This will:
 
-Build the Docker image
+✅ This will:
+- Build the Docker image
+- Spin up a MongoDB container
+- Execute all tests in a clean, isolated container
+- Save reports to the `reports/` directory inside the container
+- Persist results in the MongoDB database
 
-Spin up MongoDB
+---
 
-Execute all tests in a container
+### 💡 Supported Test Format
 
-Save test results to reports/ (inside the container)
+Your program **must**:
+- Read from **standard input**
+- Write to **standard output**
 
-Persist MongoDB results
+Each test consists of:
+- `input/input1.in`
+- `expected/expected1.out`
 
-💡 Supported Test Format
-Your program must:
+Your code will be compiled and executed for each input, and the actual output will be compared to the expected result.
 
-Read from standard input
-
-Write to standard output
-
-Each test must have:
-
-An input file: input/input1.in
-
-An expected output file: expected/expected1.out
-
-Your program will be compiled and run for each test, and actual output will be compared to the expected output.
 
 # 🔧 What If My Code Is Not C++?
 
