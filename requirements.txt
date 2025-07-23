@@ -2,4 +2,5 @@ pytest
 pytest-html
 pymongo
 rich
-
+pymongo
+pytest-json-report
