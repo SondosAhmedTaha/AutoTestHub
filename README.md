@@ -18,24 +18,23 @@ It provides automated test execution, result comparison, HTML reporting, and Mon
 - 🧼 Built-in cleanup and test result viewer
 
 ---
+## 🗂️ Project Structure
 
-🗂️ Project Structure
-graphql
-Copy
-Edit
+```text
 AutoTestHub/
-├── code/             # Your code file (default: main.cpp)
-├── input/            # input1.in, input2.in, ...
-├── expected/         # expected1.out, expected2.out, ...
-├── output/           # Output files written here after test runs
-├── reports/          # HTML + JSON reports generated here
-├── src/              # Core logic: runner, logger, DB, utils
-├── scripts/          # Helper scripts (Docker and local execution)
-├── tests/            # Unit tests for the framework
+├── code/           # Your code file (default: main.cpp)
+├── input/          # input1.in, input2.in, ...
+├── expected/       # expected1.out, expected2.out, ...
+├── output/         # Output files written here after test runs
+├── reports/        # HTML + JSON reports generated here
+├── src/            # Core logic: runner, logger, DB, utils
+├── scripts/        # Helper scripts (Docker and local execution)
+├── tests/          # Unit tests for the framework
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
+```
 
 
 ## ⚙️ Usage Options
@@ -106,27 +105,74 @@ An expected output file: expected/expected1.out
 
 Your program will be compiled and run for each test, and actual output will be compared to the expected output.
 
-🛠️ What If My Code Is Not C++?
-
+# 🔧 What If My Code Is Not C++?
 By default, runner.py compiles and runs main.cpp.
-To use other languages, modify two parts in src/runner.py:
+To use another programming language, you need to update two sections in src/runner.py:
 
-1. Change the Compilation Command
-Language	Edit code_path and compiler
-C++	g++ main.cpp -o program
-Python	No compile step needed
-Java	javac Main.java
-Rust	rustc main.rs -o program
+1. 🔨 Change the Compilation Command
+Edit this line in runner.py:
 
-2. Change the Execution Command
-Language	Execution command inside runner.py
-C++	subprocess.run(["./program"])
-Python	subprocess.run(["python3", "main.py"])
-Java	subprocess.run(["java", "Main"])
-Node.js	subprocess.run(["node", "main.js"])
+python
+Copy
+Edit
+compile_result = subprocess.run([...])
+Examples for different languages:
 
-The structure is the same — just update runner.py to match your language’s compilation and runtime.
+C++:
 
+bash
+Copy
+Edit
+g++ main.cpp -o program
+Java:
+
+bash
+Copy
+Edit
+javac Main.java
+Rust:
+
+bash
+Copy
+Edit
+rustc main.rs -o program
+Python:
+No compilation step needed — just skip this part.
+
+2. ▶️ Change the Execution Command
+Edit this line in runner.py:
+
+python
+Copy
+Edit
+subprocess.run([...], stdin=..., stdout=...)
+Examples:
+
+C++:
+
+python
+Copy
+Edit
+subprocess.run(["./program"], stdin=inp, stdout=out)
+Python:
+
+python
+Copy
+Edit
+subprocess.run(["python3", "main.py"], stdin=inp, stdout=out)
+Java:
+
+python
+Copy
+Edit
+subprocess.run(["java", "Main"], stdin=inp, stdout=out)
+Node.js:
+
+python
+Copy
+Edit
+subprocess.run(["node", "main.js"], stdin=inp, stdout=out)
+🧠 Note: The overall folder structure stays the same — just adapt runner.py to your language's compilation and runtime.
 📋 MongoDB Integration
 Each test run is timestamped and logged to MongoDB (using Docker).
 You can query results or use src/view_results.py to view previous runs:
