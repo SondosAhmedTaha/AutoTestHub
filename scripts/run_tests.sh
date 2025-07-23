@@ -11,3 +11,4 @@ source "$ROOT_DIR/.venv/bin/activate"
 
 echo "🚀 Running test suite..."
 python "$ROOT_DIR/src/runner.py"
+
