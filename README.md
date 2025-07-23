@@ -22,24 +22,21 @@ It provides automated test execution, result comparison, HTML reporting, and Mon
 ## 🗂️ Project Structure
 
 AutoTestHub/
-├── code/ # Your code file (default: main.cpp)
-├── input/ # input1.in, input2.in, ...
-├── expected/ # expected1.out, expected2.out, ...
-├── output/ # Output files written here after test runs
-├── reports/ # HTML + JSON reports generated here
-├── src/ # Core logic: runner, logger, DB, utils
-├── scripts/ # Helper scripts (Docker and local execution)
-├── tests/ # Unit tests for the framework
+├── code/             # Your code file (default: main.cpp)
+├── input/            # input1.in, input2.in, ...
+├── expected/         # expected1.out, expected2.out, ...
+├── output/           # Output files written here after test runs
+├── reports/          # HTML + JSON reports generated here
+├── src/              # Core logic: runner, logger, DB, utils
+├── scripts/          # Helper scripts (Docker and local execution)
+├── tests/            # Unit tests for the framework
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
 
-yaml
-Copy
-Edit
 
----
+
 
 ## ⚙️ Usage Options
 
@@ -51,23 +48,19 @@ Edit
    cd AutoTestHub
 Create a virtual environment:
 
-bash
-Copy
-Edit
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-Install dependencies:
+```
+Install dependencies: 
 
-bash
-Copy
-Edit
+```bash
 pip install -r requirements.txt
+```
 Run tests using the CLI script:
-
-bash
-Copy
-Edit
+```bash
 ./scripts/run_tests.sh
+```
 ✅ This will:
 
 Compile your main.cpp (or other language file)
@@ -76,8 +69,6 @@ Run tests using files in input/ and expected/
 
 Compare outputs
 
-Save results to MongoDB
-
 Generate an HTML report and JSON report inside the reports/ directory
 
 🐳 Option 2: Run with Docker (Fully Isolated)
@@ -85,10 +76,9 @@ Requires Docker installed.
 
 Build and run with:
 
-bash
-Copy
-Edit
+```bash
 ./scripts/docker_run.sh
+```
 This will:
 
 Build the Docker image
@@ -140,10 +130,9 @@ The structure is the same — just update runner.py to match your language’s c
 Each test run is timestamped and logged to MongoDB (using Docker).
 You can query results or use src/view_results.py to view previous runs:
 
-bash
-Copy
-Edit
+```bash
 python src/view_results.py
+```
 
 🧾 Dependencies
 Python 3.8+
@@ -158,10 +147,10 @@ pymongo, rich
 
 Install all with:
 
-bash
-Copy
-Edit
+```bash
 pip install -r requirements.txt
+```
+
 🛣️ Roadmap
  C++ I/O testing
 
