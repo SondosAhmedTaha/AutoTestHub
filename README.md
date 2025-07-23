@@ -106,74 +106,74 @@ An expected output file: expected/expected1.out
 Your program will be compiled and run for each test, and actual output will be compared to the expected output.
 
 # 🔧 What If My Code Is Not C++?
-By default, runner.py compiles and runs main.cpp.
-To use another programming language, you need to update two sections in src/runner.py:
 
-1. 🔨 Change the Compilation Command
-Edit this line in runner.py:
+By default, `runner.py` compiles and runs `main.cpp`.  
+To use another programming language, you need to update **two sections** in `src/runner.py`:
 
-python
-Copy
-Edit
+---
+
+### 1. 🔨 Change the Compilation Command  
+Edit this line in `runner.py`:
+
+```python
 compile_result = subprocess.run([...])
+```
+
 Examples for different languages:
 
-C++:
-
-bash
-Copy
-Edit
+**C++:**
+```bash
 g++ main.cpp -o program
-Java:
+```
 
-bash
-Copy
-Edit
+**Java:**
+```bash
 javac Main.java
-Rust:
+```
 
-bash
-Copy
-Edit
+**Rust:**
+```bash
 rustc main.rs -o program
-Python:
+```
+
+**Python:**  
 No compilation step needed — just skip this part.
 
-2. ▶️ Change the Execution Command
-Edit this line in runner.py:
+---
 
-python
-Copy
-Edit
+### 2. ▶️ Change the Execution Command  
+Edit this line in `runner.py`:
+
+```python
 subprocess.run([...], stdin=..., stdout=...)
+```
+
 Examples:
 
-C++:
-
-python
-Copy
-Edit
+**C++:**
+```python
 subprocess.run(["./program"], stdin=inp, stdout=out)
-Python:
+```
 
-python
-Copy
-Edit
+**Python:**
+```python
 subprocess.run(["python3", "main.py"], stdin=inp, stdout=out)
-Java:
+```
 
-python
-Copy
-Edit
+**Java:**
+```python
 subprocess.run(["java", "Main"], stdin=inp, stdout=out)
-Node.js:
+```
 
-python
-Copy
-Edit
+**Node.js:**
+```python
 subprocess.run(["node", "main.js"], stdin=inp, stdout=out)
-🧠 Note: The overall folder structure stays the same — just adapt runner.py to your language's compilation and runtime.
-📋 MongoDB Integration
+```
+
+---
+
+🧠 **Note:** The folder structure remains the same — just adapt `runner.py` to your language's compilation and runtime.
+
 Each test run is timestamped and logged to MongoDB (using Docker).
 You can query results or use src/view_results.py to view previous runs:
 
@@ -208,10 +208,6 @@ pip install -r requirements.txt
  Docker support
 
  Optional language selector for runner
-
- Web dashboard with Flask (optional)
-
- Test coverage integration (pytest-cov)
 
 # 👩‍💻 Author
 Sondos Taha
