@@ -8,7 +8,7 @@ client = MongoClient(MONGO_URI)
 db = client.test_results_db
 collection = db.results
 
-def save_result(test_name, status, duration, file=None, line=None, keywords=None):
+def save_result(test_name, status, duration, file=None, line=None, keywords=None, timestamp=None):
     collection.insert_one({
         "test_name": test_name,
         "status": status,
@@ -16,5 +16,5 @@ def save_result(test_name, status, duration, file=None, line=None, keywords=None
         "file": file,
         "line": line,
         "keywords": keywords or [],
-        "timestamp": datetime.now()
+        "timestamp": timestamp or datetime.now()
     })
