@@ -142,7 +142,7 @@ No compilation step needed — just skip this part.
 
 ---
 
-### 2. ▶️ Change the Execution Command  
+## 2. ▶️ Change the Execution Command  
 Edit this line in `runner.py`:
 
 ```python
@@ -182,7 +182,7 @@ You can query results or use src/view_results.py to view previous runs:
 python src/view_results.py
 ```
 
-# 🧾 Dependencies
+## 🧾 Dependencies
 Python 3.8+
 
 Docker (optional, for containerized testing)
@@ -199,7 +199,7 @@ Install all with:
 pip install -r requirements.txt
 ```
 
-# 🛣️ Roadmap
+## 🛣️ Roadmap
  C++ I/O testing
 
  MongoDB test result storage
@@ -210,9 +210,9 @@ pip install -r requirements.txt
 
  Optional language selector for runner
 
-# 👩‍💻 Author
+## 👩‍💻 Author
 Sondos Taha
 GitHub: @SondosAhmedTaha
 
-# 📄 License
+## 📄 License
 This project is licensed under the MIT License.
