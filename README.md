@@ -42,9 +42,10 @@ AutoTestHub/
 ### ✅ Option 1: Run Locally (No Docker)
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/SondosAhmedTaha/AutoTestHub.git
-   cd AutoTestHub
+ ```bash
+ git clone https://github.com/SondosAhmedTaha/AutoTestHub.git
+ cd AutoTestHub
+```
 Create a virtual environment:
 
 ```bash
