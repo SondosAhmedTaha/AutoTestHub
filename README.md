@@ -19,8 +19,10 @@ It provides automated test execution, result comparison, HTML reporting, and Mon
 
 ---
 
-## 🗂️ Project Structure
-
+🗂️ Project Structure
+graphql
+Copy
+Edit
 AutoTestHub/
 ├── code/             # Your code file (default: main.cpp)
 ├── input/            # input1.in, input2.in, ...
@@ -34,8 +36,6 @@ AutoTestHub/
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-
-
 
 
 ## ⚙️ Usage Options
@@ -107,6 +107,7 @@ An expected output file: expected/expected1.out
 Your program will be compiled and run for each test, and actual output will be compared to the expected output.
 
 🛠️ What If My Code Is Not C++?
+
 By default, runner.py compiles and runs main.cpp.
 To use other languages, modify two parts in src/runner.py:
 
