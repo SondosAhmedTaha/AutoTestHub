@@ -1,4 +1,4 @@
-version: '3.8'
+
 
 services:
   autotesthub:
@@ -9,6 +9,10 @@ services:
       - MONGO_URI=mongodb://mongodb:27017
     volumes:
       - ./reports:/app/reports
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./expected:/app/expected
+      - ./code:/app/code
     command: python src/runner.py
 
   mongodb:
