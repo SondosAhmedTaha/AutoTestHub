@@ -70,7 +70,7 @@ Compare outputs
 
 Generate an HTML report and JSON report inside the reports/ directory
 
-🐳 Option 2: Run with Docker (Fully Isolated)
+### 🐳 Option 2: Run with Docker (Fully Isolated)
 Requires Docker installed.
 
 Build and run with:
@@ -181,7 +181,7 @@ You can query results or use src/view_results.py to view previous runs:
 python src/view_results.py
 ```
 
-🧾 Dependencies
+# 🧾 Dependencies
 Python 3.8+
 
 Docker (optional, for containerized testing)
@@ -198,7 +198,7 @@ Install all with:
 pip install -r requirements.txt
 ```
 
-🛣️ Roadmap
+# 🛣️ Roadmap
  C++ I/O testing
 
  MongoDB test result storage
@@ -213,9 +213,9 @@ pip install -r requirements.txt
 
  Test coverage integration (pytest-cov)
 
-👩‍💻 Author
+# 👩‍💻 Author
 Sondos Taha
 GitHub: @SondosAhmedTaha
 
-📄 License
+# 📄 License
 This project is licensed under the MIT License.
