@@ -1,0 +1,37 @@
+
+        <html>
+        <head>
+            <title>I/O Test Report</title>
+            <style>
+                body { font-family: Arial; padding: 20px; }
+                table { border-collapse: collapse; width: 100%; }
+                th, td { border: 1px solid #ccc; padding: 8px; }
+                th { background: #eee; }
+                .pass { background-color: #d4edda; }
+                .fail { background-color: #f8d7da; }
+                details { margin-top: 1em; }
+            </style>
+        </head>
+        <body>
+            <h1>I/O Test Report ({now})</h1>
+            <table>
+                <tr><th>Test Name</th><th>Status</th><th>Duration (s)</th></tr>
+        <tr class='pass'><td>input1.in</td><td>PASS</td><td>0.293671</td></tr><tr class='fail'><td>input2.in</td><td>FAIL</td><td>0.003312</td></tr><tr class='fail'><td>input3.in</td><td>FAIL</td><td>0.004461</td></tr></table><details><summary>Details for input2.in</summary>
+    <table class="diff" id="difflib_chg_to0__top"
+           cellspacing="0" cellpadding="0" rules="groups" >
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        <thead><tr><th class="diff_next"><br /></th><th colspan="2" class="diff_header">Expected</th><th class="diff_next"><br /></th><th colspan="2" class="diff_header">Actual</th></tr></thead>
+        <tbody>
+            <tr><td class="diff_next" id="difflib_chg_to0__0"><a href="#difflib_chg_to0__top">t</a></td><td class="diff_header" id="from0_1">1</td><td nowrap="nowrap">Hello,&nbsp;Bob!&nbsp;You&nbsp;are&nbsp;4</td><td class="diff_next"><a href="#difflib_chg_to0__top">t</a></td><td class="diff_header" id="to0_1">1</td><td nowrap="nowrap">Hello,&nbsp;Bob!&nbsp;You&nbsp;are&nbsp;4<span class="diff_add">5&nbsp;years&nbsp;old.</span></td></tr>
+        </tbody>
+    </table></details><details><summary>Details for input3.in</summary>
+    <table class="diff" id="difflib_chg_to1__top"
+           cellspacing="0" cellpadding="0" rules="groups" >
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        <thead><tr><th class="diff_next"><br /></th><th colspan="2" class="diff_header">Expected</th><th class="diff_next"><br /></th><th colspan="2" class="diff_header">Actual</th></tr></thead>
+        <tbody>
+            <tr><td class="diff_next" id="difflib_chg_to1__0"><a href="#difflib_chg_to1__top">t</a></td><td class="diff_header" id="from1_1">1</td><td nowrap="nowrap">Hello,&nbsp;Sondos!&nbsp;You&nbsp;are&nbsp;<span class="diff_chg">30</span>&nbsp;years&nbsp;old.</td><td class="diff_next"><a href="#difflib_chg_to1__top">t</a></td><td class="diff_header" id="to1_1">1</td><td nowrap="nowrap">Hello,&nbsp;Sondos!&nbsp;You&nbsp;are&nbsp;<span class="diff_chg">47</span>&nbsp;years&nbsp;old.</td></tr>
+        </tbody>
+    </table></details></body></html>
